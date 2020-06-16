@@ -1,0 +1,13 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri":"mysql://root:@localhost/islamicblogs",
+        "prod_uri":"mysql://root:@localhost/islamicblogs",
+        "gmail-user":"nrk36731@gmail.com",
+        "gmail-password":"Mycomp@31",
+        "no_of_posts":3 ,
+        "admin_user":"naseebbdkgmail.com",
+        "admin_password": "nrk36731"
+    }
+}

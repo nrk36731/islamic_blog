@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+ 
+  <header class="masthead" style="background-image: url('{{ url_for('static',filename='img/ablog.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Islamic Blogs</h1>
+            <span class="subheading">All blogs are listed here.<br>Click on the Title of the blog you want to read.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+   <div class="container">
+
+          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sl No.</th>
+        <th>Title</th>        
+        <th>Date</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in posts %}  
+      <tr>
+        <td>{{post.sno}}</td>
+        <td><a href="/post/{{post.slug}}">{{post.title}}</a></td>
+        <td>{{post.dt}}</td>
+        
+      </tr>
+       {% endfor %}
+          </tbody>
+  </table>
+</div>
+<!-- Pager -->
+          <div class="clearfix">
+            <a href="{{prev}}" class="btn btn-secondary btn-lg active  " role="button" aria-pressed="true"><<</a>
+            <a href="{{next}}" class="btn btn-primary float-right  btn-lg active" role="button" aria-pressed="true">>></a>
+          </div>
+ 
+    {% endblock %}
+

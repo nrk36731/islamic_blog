@@ -1,0 +1,19 @@
+ {% extends 'layout.html' %} 
+ {% block body %}
+ <style>
+</style>
+ <header class="masthead" style="background-image: url('{{ url_for('static',filename='img/ibthank-b.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>We have recieved your message.</h1>
+            <span class="subheading">Thank you for Contating Us.</span>
+            <a href="/home">Move to HomePage</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+ {% endblock %}

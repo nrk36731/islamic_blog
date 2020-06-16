@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block body %}
+  <style>
+   button.link
+    { background:none;border:none; }
+   button.link:hover
+  {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px;
+  }
+  a{text-decoration:none;}
+  </style>
+  <header class="masthead" style="background-image: url('{{ url_for('static',filename='img/dash.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Islamic Blogs</h1>
+            <span class="subheading">Welcome Admin User</span>
+            <span class="subheading">You can manage your blogs here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+   <div class="container">
+  <div class="clearfix">
+  
+    <h5>Add new blog<br></h5>
+            <a class="btn btn-primary " href="edit/0">Add Post</a>
+          <a class="btn btn-primary " href="feedback">View Feedbacks</a>
+          <br><br>
+          <a class="btn btn-primary " href="/logout">Logout</a></div><hr>
+  <h5>Edit existing blogs</h5>
+          
+  <table class="table">
+    <thead>
+      <tr>
+        
+        <th>Title</th>        
+        <th>Date</th>
+        <th>  </th>
+        <th>  </th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in posts %}  
+      <tr>
+        
+        <td><a href="/post/{{post.slug}}">{{post.title}}</a></td>
+        <td>{{post.dt}}</td>
+        <td><a href="edit/{{post.sno}}"><button class="link">Edit</button></a></td>
+        <td><a href="/delete/{{post.sno}}"><button class="link">Delete</button></a></td>
+      </tr>
+       {% endfor %}
+          </tbody>
+  </table>
+</div>
+ 
+    {% endblock %}
+

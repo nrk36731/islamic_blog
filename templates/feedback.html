@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block body %}
+<header class="masthead" style="background-image: url('{{ url_for('static',filename='img/edit.jfif') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Islamic Blogs</h1>
+            <span class="subheading">Welcome Admin User</span>
+            <span class="subheading">View your Feedbacks here.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+   <div class="container">
+  <div class="clearfix">
+  
+    <h3>Feedbacks<br></h3><hr>
+           <a href="/login" class="btn btn-primary" >Back to Dashboard</a>
+          <a href="/logout" class="btn btn-primary " >Logout</a></div><hr>
+  <h5>Edit existing blogs</h5>
+          
+  <table class="table">
+    <thead>
+      <tr>
+        
+        <th>Name</th>        
+        <th>Email</th>
+        <th>Phone  </th>
+        <th>Message  </th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in posts %}  
+      <tr>
+        
+        <td>{{post.name}}</td>
+        <td>{{post.email}}</td>
+        <td>{{post.phn}}</td>
+        <td>{{post.mes}}</td>
+      </tr>
+       {% endfor %}
+          </tbody>
+  </table>
+</div>
+{% endblock body %}
